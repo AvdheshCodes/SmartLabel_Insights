@@ -1,7 +1,6 @@
 ![image](https://github.com/user-attachments/assets/92115604-0a24-4dde-b432-ed3c1a8a4edb)# SmartLabel_Insights
 SmartLabel Insight is an AI-driven label reader for packaged food, helping consumers make informed health decisions. It automates data extraction, categorizes products, and delivers health insights for easier, smarter choices.
 
-![projectimage](https://github.com/user-attachments/assets/8c6f8699-2c01-427e-af27-b76ce57d6791)
 
 
 Optimization Goals:
