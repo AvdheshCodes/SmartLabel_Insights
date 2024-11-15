@@ -1,0 +1,205 @@
+/* General Reset and Box-Sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #faf6e3;
+  color: #2a3663;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  transition: all 0.3s ease;
+}
+
+/* Navbar Styling */
+.navbar {
+  width: 100%;
+  background-color: #2a3663;
+  color: #faf6e3;
+  padding: 10px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.navbar h1 {
+  font-size: 24px;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+}
+
+.navbar ul li {
+  margin-left: 20px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: #faf6e3;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+  color: #b59f78;
+}
+
+/* Main Form Container */
+.form-container {
+  background-color: #d8dbbd;
+  padding: 40px;
+  border-radius: 10px;
+  width: 400px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 80px; /* to prevent navbar from overlapping */
+  animation: fadeInUp 1s ease-out forwards;
+  opacity: 0;
+  transform: translateY(30px);
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Heading Styling */
+h2 {
+  font-size: 24px;
+  color: #2a3663;
+  text-align: center;
+  margin-bottom: 20px;
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Form Input Fields Styling */
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 2px solid #b59f78;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #faf6e3;
+  color: #2a3663;
+  outline: none;
+  transition: all 0.3s ease;
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 1s;
+}
+
+/* Input focus and hover effects */
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-color: #2a3663;
+  background-color: #fff;
+  transform: scale(1.02);
+  animation: focusEffect 0.3s ease-out forwards;
+}
+
+@keyframes focusEffect {
+  0% {
+    border-color: #b59f78;
+  }
+  100% {
+    border-color: #2a3663;
+  }
+}
+
+input[type="email"]:hover,
+input[type="password"]:hover {
+  border-color: #b59f78;
+  background-color: #faf6e3;
+}
+
+/* Submit Button Styling */
+.button {
+  width: 100%;
+  padding: 12px;
+  background-color: #2a3663;
+  color: #faf6e3;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 1.2s;
+}
+
+.button:hover {
+  background-color: #b59f78;
+  transform: translateY(-5px);
+}
+
+.button:active {
+  background-color: #2a3663;
+  transform: translateY(2px);
+}
+
+/* Link Styling (if any links are added) */
+a {
+  text-decoration: none;
+  color: #2a3663;
+  font-size: 14px;
+  display: block;
+  text-align: center;
+  margin-top: 15px;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #b59f78;
+}
+
+/* Responsive Styles */
+@media (max-width: 480px) {
+  .form-container {
+    padding: 20px;
+    width: 90%;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  input[type="email"],
+  input[type="password"],
+  .button {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
