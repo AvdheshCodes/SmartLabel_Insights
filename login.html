@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SmartLabel Insight - Login</title>
+    <link rel="stylesheet" href="stylelogin.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container">
+        <h1>SmartLabel Insight</h1>
+        <ul>
+          <li><a href="index.html" id="homeLink">Home</a></li>
+          <li><a href="login.html" id="loginLink">Login</a></li>
+          <li><a href="upload.html" id="getStartedLink">Get Started</a></li>
+        </ul>
+      </div>
+    </nav>
+    <main class="form-container">
+      <h2>Login to Your Account</h2>
+      <form id="loginForm">
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          placeholder="Enter your email"
+          required
+        />
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          id="password"
+          placeholder="Enter your password"
+          required
+        />
+        <button type="submit" class="button">Login</button>
+      </form>
+    </main>
+
+    <script>
+      // JavaScript to handle navigation when clicking "Get Started" or "Login"
+
+      // Selecting the links by their IDs
+      const getStartedLink = document.getElementById("getStartedLink");
+      const loginLink = document.getElementById("loginLink");
+
+      // Adding event listeners to handle clicks on "Get Started" and "Login" links
+      getStartedLink.addEventListener("click", function (event) {
+        // Preventing the default action (if you want to add any extra logic)
+        event.preventDefault();
+        // Redirecting to the "upload.html" page (Get Started)
+        window.location.href = "upload.html";
+      });
+
+      loginLink.addEventListener("click", function (event) {
+        // Preventing the default action (if you want to add any extra logic)
+        event.preventDefault();
+        // Redirecting to the "login.html" page
+        window.location.href = "login.html";
+      });
+
+      // Optional: you can add form submission handling if needed for the login form
+      const loginForm = document.getElementById("loginForm");
+      loginForm.addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent the form from submitting normally
+        // Handle login logic here (e.g., validation or API calls)
+        alert("Login submitted!");
+        // You can navigate to a different page after a successful login if needed
+        // For example: window.location.href = 'dashboard.html';
+      });
+    </script>
+  </body>
+</html>
