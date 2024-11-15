@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SmartLabel Insight - Upload</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* Basic Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Full Page Layout */
+      body {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+      }
+
+      /* Navbar */
+      .navbar {
+        color: white;
+        padding: 10px 0;
+      }
+
+      .navbar .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .navbar ul {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+      }
+
+      .navbar ul li {
+        display: inline;
+      }
+
+      .navbar ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+      }
+
+      .navbar ul li a.active {
+        font-weight: bold;
+      }
+
+      /* Upload Section Layout */
+      .upload {
+        display: flex;
+        flex-grow: 1;
+        max-width: 1200px;
+        margin: 20px auto;
+        padding: 0 20px;
+      }
+
+      /* Side Panel for Video */
+      #videoPanel {
+        width: 40%;
+        margin-right: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      /* Video Styling */
+      #myVideo {
+        width: 100%;
+        max-width: 100%;
+        border: 2px solid #ddd;
+      }
+
+      /* Upload Form Section */
+      .upload .container {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .upload h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+
+      .upload p {
+        margin-bottom: 20px;
+      }
+
+      .file-input {
+        margin-bottom: 20px;
+      }
+
+      .button {
+        padding: 10px 20px;
+        background-color: #2a3663;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      .analysis-summary {
+        margin-top: 30px;
+      }
+
+      /* Footer */
+      footer {
+        background-color: #2a3663;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="container">
+        <h1>Smart Label Insights</h1>
+      </div>
+    </nav>
+
+    <!-- Upload Section with Side Panel for Video -->
+    <section class="upload">
+      <div id="videoPanel">
+        <video id="myVideo" controls>
+          <source src="scan.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <div class="container">
+        <h2>Upload Your Food Label</h2>
+        <p>
+          Get instant insights about nutritional content, allergens, and
+          ingredients. Simply upload your food label below.
+        </p>
+        <form id="uploadForm">
+          <input type="file" accept="image/*" class="file-input" required />
+          <button type="submit" class="button">Analyze Label</button>
+        </form>
+
+        <!-- Analyzed Summary Section -->
+        <div id="analysisSummary" class="analysis-summary">
+          <h3>summary</h3>
+          <h3>Analysis Summary</h3>
+          <p>
+            <strong>Nutritional Insights:</strong> Calories: 250 kcal, Protein:
+            10g, Sugar: 15g
+          </p>
+          <p><strong>Allergen Warnings:</strong> Contains peanuts and dairy.</p>
+          <p>
+            <strong>Ingredient Details:</strong> Sugar, Flour, Peanut Butter,
+            Milk Powder.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2024 SmartLabel Insight. All rights reserved.</p>
+    </footer>
+
+    <script>
+      // Dummy logic to show the analysis section after form submission
+      const uploadForm = document.getElementById("uploadForm");
+      const analysisSummary = document.getElementById("analysisSummary");
+      analysisSummary.style.display = "none"; // Hide initially
+
+      uploadForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        analysisSummary.style.display = "block"; // Show the summary after submission
+      });
+    </script>
+  </body>
+</html>
